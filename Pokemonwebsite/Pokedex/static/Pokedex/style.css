@@ -1,0 +1,22 @@
+.movestyle {
+  background-color: blue;
+  color: aliceblue;
+  padding: 4px;
+  height: fit-content;
+  width: 300px;
+  margin: 5px;
+  border-radius: 5%;
+
+  /* display: flex; */
+}
+
+.Heading h3 {
+  background-color: green;
+}
+.movestyle :hover {
+  zoom: 102%;
+}
+.move_flex {
+  display: flex;
+  flex-wrap: wrap;
+}

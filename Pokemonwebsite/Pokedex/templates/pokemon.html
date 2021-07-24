@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ name }}</title>
+</head>
+
+<body>
+    {% load static %}
+    <link rel="stylesheet"  href="{% static 'Pokedex/style.css' %}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <h1>Name: {{ name }}</h1>
+    <h2>Types:</h2>
+    <ul>
+        {% for type in types %}
+        <li>{{ type }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Abilities:</h2>
+    <ul>
+        {% for abilities in ability %}
+        <li>{{ abilities }}</li>
+        {% endfor %}
+    </ul>
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{index}}.png" alt="Image not found">
+    <h2>Moves:</h2><br>
+    <div class="move_flex">
+        
+    {% for move in moves %}
+        <div class="movestyle">
+            <span class="Heading">   
+            <h3>{{ move.name }}</h3>
+            </span>
+        
+            <p>{{ move.description }}</p>
+            <p>Accuracy: {{ move.accuracy }}</p>
+            <p>Type: {{ move.dmg_type }}</p>
+        </div>
+    {% endfor %}
+    </div>
+    <h2>Statistics:</h2>
+    <div class="move_flex">
+        {% for stat,val in statistics %}
+            <div class="movestyle">
+                <p>{{ stat }} : {{ val }}</p>
+            </div>
+        {% endfor %}
+        </div>
+
+</body>
+
+</html>
